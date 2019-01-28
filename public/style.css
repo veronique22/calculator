@@ -1,0 +1,16 @@
+td , th
+{
+    border: 2px solid black; /* auront une bordure de 1px */
+}
+table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+    font-size-adjust: inherit;
+    font-weight: bold;
+    color: aqua;
+    background-position: center;
+    border: 10 px solid greenyellow;
+    border-radius: 5px;
+    box-shadow: 6px 6px 0 px black;
+    text-decoration-style: double
+}
