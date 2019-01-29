@@ -11,7 +11,7 @@
      <caption id = title>rekenmachine</caption>
      <tr>
           <td colspan="3" class = result><input type="Text" name = "display"  id = "display"> </td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="C" onclick="document.getElementById('display').value = ''"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="C" onclick="document.getElementById('display').value = null"></td>
        </tr><tr>
          <td class="calc_td_btn"><input type ="button" class="btn" value="7" onclick="document.getElementById('display').value += '7' "></td>
          <td class="calc_td_btn"><input type ="button" class="btn" value="8" onclick="document.getElementById('display').value += '8'"> </td>
@@ -33,17 +33,11 @@
           <td class="calc_td_btn"><input type ="button" class="btn" value="%" onclick="document.getElementById('display').value += '%'"></td>
           <td class="calc_td_btn"><input type ="button" class="btn" value="+" onclick="document.getElementById('display').value += '+'"></td>
         </tr><tr>
-            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="retour" onclick="document.getElementById('display').value += ''"></td>
+            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="retour" onclick="document.getElementById('display').value = null"></td>
             <td class="calc_td_btn"><input type ="button" class="btn" value="."  onclick="document.getElementById('display').value += '.'"></td>
-            <td class="calc_td_btn"><input type ="button" class="btn" value="=" onclick="document.getElementById('display').value += '='"></td>
+            <td class="calc_td_btn"><input type ="button" class="btn" value="=" onclick="document.getElementById('display').value = eval(document.getElementById('display').value);"></td>
         </tr>y</table>
     </form>
-     <script>
-       function calculate()
-       {
-         
-       }
-     </script>
  </body>
  <footer>
    <h6>Veronique Lea MAJO FONKOU .NET C# developer @Intec2019</h6>
