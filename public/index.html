@@ -6,104 +6,43 @@
    <link rel="stylesheet" href = "style.css" />
  </head>
  <body>
-   <form>
+   <form >
    <table class = calculator>
      <caption id = title>rekenmachine</caption>
      <tr>
-          <th colspan="3" class = result><input name = "ReadOut" type="Text"  value = "0" readonly = "readonly" ></th>
-          <th class="calc_td_btn"><input type ="button" class="btn" value="C" onclick="clear()"></th>
+          <td colspan="3" class = result><input type="Text" name = "display"  id = "display"> </td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="C" onclick="document.getElementById('display').value = ''"></td>
        </tr><tr>
-         <td class="calc_td_btn"><input type ="button" class="btn" value="7" onclick="NumPressed(7)"></td>
-         <td class="calc_td_btn"><input type ="button" class="btn" value="8" onclick="NumPressed(8)"> </td>
-         <td class="calc_td_btn"><input type ="button" class="btn" value="9" onclick="NumPressed(9)"> </td>
-         <td class="calc_td_btn"><input type ="button" class="btn" value="/"  onclick="Operation('/')"></td>
+         <td class="calc_td_btn"><input type ="button" class="btn" value="7" onclick="document.getElementById('display').value += '7' "></td>
+         <td class="calc_td_btn"><input type ="button" class="btn" value="8" onclick="document.getElementById('display').value += '8'"> </td>
+         <td class="calc_td_btn"><input type ="button" class="btn" value="9" onclick="document.getElementById('display').value += '9'"> </td>
+         <td class="calc_td_btn"><input type ="button" class="btn" value="/"  onclick="document.getElementById('display').value += '/'"></td>
         </tr><tr>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="4" onclick="NumPressed(4)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="5" onclick="NumPressed(5)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="6" onclick="NumPressed(6)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="*" onclick="Operation('*')"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="4" onclick="document.getElementById('display').value += '4'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="5" onclick="document.getElementById('display').value += '5'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="6" onclick="document.getElementById('display').value += '6'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="X" onclick="document.getElementById('display').value += '*'"></td>
         </tr><tr>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="1" onclick="NumPressed(1)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="2" onclick="NumPressed(2)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="3" onclick="NumPressed(3)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="-"  onclick="Operation('-')"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="1" onclick="document.getElementById('display').value += '1'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="2" onclick="document.getElementById('display').value += '2'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="3" onclick="document.getElementById('display').value += '3'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="-"  onclick="document.getElementById('display').value += '-'"></td>
         </tr><tr>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="+-" onclick="Operation('+-')"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="0" onclick="NumPressed(0)"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="%" onclick="Percent()"></td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="+" onclick="Operation('+')"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="+-" onclick="document.getElementById('display').value += '+-'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="0" onclick="document.getElementById('display').value += '0'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="%" onclick="document.getElementById('display').value += '%'"></td>
+          <td class="calc_td_btn"><input type ="button" class="btn" value="+" onclick="document.getElementById('display').value += '+'"></td>
         </tr><tr>
-            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="retour" onclick="clearEntry()"></td>
-            <td class="calc_td_btn"><input type ="button" class="btn" value="."  onclick="Operation('.')"></td>
-            <td class="calc_td_btn"><input type ="button" class="btn" value="=" onclick="Operation('=')"></td>
-        </tr>
-     </table>
+            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="retour" onclick="document.getElementById('display').value += ''"></td>
+            <td class="calc_td_btn"><input type ="button" class="btn" value="."  onclick="document.getElementById('display').value += '.'"></td>
+            <td class="calc_td_btn"><input type ="button" class="btn" value="=" onclick="document.getElementById('display').value += '='"></td>
+        </tr>y</table>
     </form>
      <script>
-       var FKeyPad = document.Keypad;
-var Accumulate = 0;
-var FlagNewNum = false;
-var PendingOp = "";
-function NumPressed (Num) {
-if (FlagNewNum) {
-FKeyPad.ReadOut.value  = Num;
-FlagNewNum = false;
-   }
-else {
-if (FKeyPad.ReadOut.value == "0")
-FKeyPad.ReadOut.value = Num;
-else
-FKeyPad.ReadOut.value += Num;
-   }
-}
-function Operation (Op) {
-var Readout = FKeyPad.ReadOut.value;
-if (FlagNewNum && PendingOp != "=");
-else
-{
-FlagNewNum = true;
-if ( '+' == PendingOp )
-Accumulate += parseFloat(Readout);
-else if ( '-' == PendingOp )
-Accumulate -= parseFloat(Readout);
-else if ( '/' == PendingOp )
-Accumulate /= parseFloat(Readout);
-else if ( '*' == PendingOp )
-Accumulate *= parseFloat(Readout);
-else
-Accumulate = parseFloat(Readout);
-FKeyPad.ReadOut.value = Accumulate;
-PendingOp = Op;
-   }
-}
-function Decimal () {
-var curReadOut = FKeyPad.ReadOut.value;
-if (FlagNewNum) {
-curReadOut = "0.";
-FlagNewNum = false;
-   }
-else
-{
-if (curReadOut.indexOf(".") == -1)
-curReadOut += ".";
-   }
-FKeyPad.ReadOut.value = curReadOut;
-}
-function ClearEntry () {
-FKeyPad.ReadOut.value = "0";
-FlagNewNum = true;
-}
-function Clear () {
-Accumulate = 0;
-PendingOp = "";
-ClearEntry();
-}
-function Neg () {
-FKeyPad.ReadOut.value = parseFloat(FKeyPad.ReadOut.value) * -1;
-}
-function Percent () {
-FKeyPad.ReadOut.value = (parseFloat(FKeyPad.ReadOut.value) / 100) * parseFloat(Accumulate);
-}
+       function calculate()
+       {
+         
+       }
      </script>
  </body>
  <footer>
