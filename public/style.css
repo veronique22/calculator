@@ -1,16 +1,51 @@
-td , th
+#title
 {
-    border: 2px solid black; /* auront une bordure de 1px */
+    font-size: 18px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: coral;
 }
-table
+.calculator
 {
-    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
-    font-size-adjust: inherit;
-    font-weight: bold;
-    color: aqua;
-    background-position: center;
-    border: 10 px solid greenyellow;
-    border-radius: 5px;
-    box-shadow: 6px 6px 0 px black;
-    text-decoration-style: double
+        width:300px;
+        height:300px;
+        background-color: chocolate;
+        border:2px solid brown;
+        margin:auto;
+        padding-left:5px;
+        padding-bottom:5px;
+
+}
+.calculator td th
+{
+        height:16.66%;
+}
+.result
+{
+        text-align:center;
+}
+.resultat
+{
+        width:90%;
+        text-align:left;
+}
+.calc_td_calculs
+{
+        text-align:center;
+}
+.calc_calculs
+{
+        width:90%;
+        text-align:left;
+}
+.calc_td_btn
+{
+        width:25%;
+        height:100%;
+}
+.btn
+
+{
+        width:90%;
+        height:90%;
+        font-size:20px;
 }
