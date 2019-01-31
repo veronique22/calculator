@@ -15,7 +15,7 @@
         padding-bottom:5px;
         border-radius: 10px;
         background-image: url('mickeyfam.jpg') ;
-        background-repeat: repeat-y;
+        background-repeat: no- repeat;
         background-position: center;
 }
 .calculator td th

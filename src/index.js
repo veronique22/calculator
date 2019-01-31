@@ -26,4 +26,4 @@ function renderScreen()
 {
     return crel ('input', {id: "screen"})
 }
-document.getElementById('root').appendChild(renderCalculator())
+/*document.getElementById('root').appendChild(renderCalculator())*/
