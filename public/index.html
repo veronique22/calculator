@@ -4,14 +4,16 @@
     <meta charset="utf-8">
    <title>Mijn eerste rekenmachine</title>
    <link rel="stylesheet" href = "style.css" />
+   <style>
+   body{background-image: url(MickeyMouse.jpg);}
+   </style>
  </head>
  <body>
    <form >
    <table class = calculator>
      <caption id = title>rekenmachine</caption>
      <tr>
-          <td colspan="3" class = result><input type="Text" name = "display"  id = "display"> </td>
-          <td class="calc_td_btn"><input type ="button" class="btn" value="C" onclick="document.getElementById('display').value = null"></td>
+        <th colspan="4" class = result><input type="Text" name = "display"  id = "display"> </th>
        </tr><tr>
          <td class="calc_td_btn"><input type ="button" class="btn" value="7" onclick="document.getElementById('display').value += '7' "></td>
          <td class="calc_td_btn"><input type ="button" class="btn" value="8" onclick="document.getElementById('display').value += '8'"> </td>
@@ -33,7 +35,7 @@
           <td class="calc_td_btn"><input type ="button" class="btn" value="%" onclick="document.getElementById('display').value += '%'"></td>
           <td class="calc_td_btn"><input type ="button" class="btn" value="+" onclick="document.getElementById('display').value += '+'"></td>
         </tr><tr>
-            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="retour" onclick="document.getElementById('display').value = null"></td>
+            <td class="calc_td_btn" colspan="2"><input type ="button" class="btn" value="C" onclick="document.getElementById('display').value = null"></td>
             <td class="calc_td_btn"><input type ="button" class="btn" value="."  onclick="document.getElementById('display').value += '.'"></td>
             <td class="calc_td_btn"><input type ="button" class="btn" value="=" onclick="document.getElementById('display').value = eval(document.getElementById('display').value);"></td>
         </tr>y</table>

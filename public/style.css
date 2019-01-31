@@ -1,19 +1,20 @@
 #title
 {
-    font-size: 18px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: coral;
+    font-size: 38px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: chocolate;
 }
 .calculator
 {
         width:300px;
-        height:300px;
-        background-color: chocolate;
-        border:2px solid brown;
-        margin:auto;
+        height:500px;
+        border:5px solid chocolate;
+        margin-left: 70%;
+        margin-top: 10%;
         padding-left:5px;
         padding-bottom:5px;
-
+        border-radius: 10px;
+        background-image: url('mickey.jpg')
 }
 .calculator td th
 {
@@ -28,10 +29,12 @@
         width:90%;
         text-align:left;
 }
-.calc_td_btn
+.calc_td_btn , .result
 {
         width:25%;
         height:100%;
+        opacity: 0.8;
+        border-radius: 10px;
 }
 .btn
 
@@ -39,4 +42,6 @@
         width:90%;
         height:90%;
         font-size:20px;
+        border-radius: 10px; 
+         border-radius: 10px;
 }
